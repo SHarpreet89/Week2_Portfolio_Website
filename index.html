@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harpreet Singh's Webdesign Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar-left">
+                <img class="navbarimage" src="./assets/images/Self Portrait Square.jpg" alt="Navigation Bar Image">
+            </div>
+            <div class="navbar-text">
+                <h3 class="text-white">Hi, I am Harpreet Singh</h3>
+                <h4 class="text-white">Full-stack Webdeveloper</h4>
+            </div>
+            <div class="navbar-right">
+                <ul>
+                    <li><a href="#aboutme">ABOUT ME</a></li>
+                    <li><a href="#work">WORK</a></li>
+                    <li><a href="#resume">RESUME</a></li>
+                    <li><a href="#contact">CONTACT ME</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="main-content-container">
+                <div class="row">
+                    <div class="col-4">
+                        <h2>ABOUT ME</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                    <div class="col-4">
+                        <h2>WORK</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                    <div class="col-4">
+                        <h2>RESUME</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                    <div class="col-4">
+                        <h2>CONTACT ME</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quod.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+      <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const header = document.querySelector('header');
+                const headerHeight = header.offsetHeight;
+                const navbarImageSize = headerHeight * 0.85; // 75% of the header height
+                header.style.setProperty('--navbar-image-size', `${navbarImageSize}px`);
+            });
+    </script>
+    
+</body>
+</html>

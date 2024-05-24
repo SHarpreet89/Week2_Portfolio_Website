@@ -1,0 +1,147 @@
+/* reset.css */
+/* Add any necessary reset styles */
+
+/* style.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgb(250, 237, 205);
+    flex: 0 0 10vh;/* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
+}
+
+nav {
+    padding: .5vh 1vh .5vh .5vh;
+    background-color: rgb(212, 163, 115);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure the height is the same as the nav */
+    width: calc(var(--navbar-image-size) * 1.25); /* Initial width, will be adjusted by JS */
+    flex: 0 0 auto; /* Prevent flex-grow and flex-shrink */
+    position: relative; /* Make it easier to position the image */
+    overflow: hidden; /* Hide the overflow for zoom effect */
+}
+
+.navbarimage {
+    height: var(--navbar-image-size); /* Use the custom property */
+    width: var(--navbar-image-size); /* Use the custom property */
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Cover the container */
+    object-position: center top; /* Position the image to show more of the face */
+    position: absolute; /* Position absolutely within the .navbar-left */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); 
+}
+
+
+/* NAVBAR TEXT BOX PROPERTIES */
+
+.navbar-text {
+    line-height: 120%;
+    display: inline-block;
+    justify-content: center;
+    flex: 2 1 0; /* Flex-basis: 2 parts */
+}
+
+.navbar-text h3 {
+    font-size: medium;
+}
+
+.navbar-text h4 {
+    font-size: small;
+}
+
+/* NAVBAR RIGHT PROPERTIES */
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 0 0 auto;
+    padding: 0 1%;
+}
+
+.navbar-right ul {
+    font-weight: bolder;
+    display: flex; /* Align items horizontally */
+    flex-direction: column;;
+    gap: 0rem; /* Optional: Add space between links */
+    text-align: right;
+    font-size: small;
+    white-space: nowrap;
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar-right ul li {
+    display: inline-block;
+    line-height: 1.8vh; /* 25% of 10vh */
+    padding: 0 1rem;
+    border-radius: 5px;
+}
+
+.navbar-right a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.navbar-right ul li:nth-child(odd) {
+    background-color: rgb(254, 250, 224);
+}
+
+.navbar-right ul li:nth-child(even) {
+    background-color: rgb(171, 151, 98);
+}
+
+/* SMALL DEVICE MEDIA QUERIES */
+
+@media screen and (min-aspect-ratio: 2/1) and (max-width: 1024px) {
+    header {
+        flex: 0 0 10vw; /* Change flex-basis to 20vw */
+    }
+
+    .navbar-right ul li {
+        line-height: 4.5vh; /* 25% of 10vh */
+    }
+
+    nav {
+        padding: 2vh;
+    }
+}
+
+/* MAIN CONTENT AREA ORGANIZATION */
+
+    .main-content-container {
+        padding: 2vw;
+        flex: 1 1 auto; /* Allow the main content to grow */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+    }
+
+    .main-content-container div:nth-child(odd) {
+        background-color: yellow;
+    }
+
+    @media screen and (orientation: portrait), screen and (min-width: 1025px) {
+        .main-content-container {
+            padding: 2vh;
+        }
+    }
+
