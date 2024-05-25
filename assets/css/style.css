@@ -1,147 +1,295 @@
-/* reset.css */
-/* Add any necessary reset styles */
-
-/* style.css */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+:root {
+    --header-height: 10vh;
+    --navbar-image-size: calc(var(--header-height) * 0.9);
+    --header-color: rgb(212, 163, 115);
+    --header-color-backup: rgb(250, 237, 205);
+    --navbar-color: rgb(212, 163, 115);
+    --flex-card-background-color: rgb(85, 166, 90);
+    --whole-website-width: 80vw;
 }
 
-header {
-    background-color: rgb(250, 237, 205);
-    flex: 0 0 10vh;/* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
-}
-
-nav {
-    padding: .5vh 1vh .5vh .5vh;
-    background-color: rgb(212, 163, 115);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%; /* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
-}
-
-.navbar-left {
-    display: flex;
-    align-items: center;
-    height: 100%; /* Ensure the height is the same as the nav */
-    width: calc(var(--navbar-image-size) * 1.25); /* Initial width, will be adjusted by JS */
-    flex: 0 0 auto; /* Prevent flex-grow and flex-shrink */
-    position: relative; /* Make it easier to position the image */
-    overflow: hidden; /* Hide the overflow for zoom effect */
-}
-
-.navbarimage {
-    height: var(--navbar-image-size); /* Use the custom property */
-    width: var(--navbar-image-size); /* Use the custom property */
-    border-radius: 50%; /* Make the image round */
-    object-fit: cover; /* Cover the container */
-    object-position: center top; /* Position the image to show more of the face */
-    position: absolute; /* Position absolutely within the .navbar-left */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); 
-}
-
-
-/* NAVBAR TEXT BOX PROPERTIES */
-
-.navbar-text {
-    line-height: 120%;
-    display: inline-block;
-    justify-content: center;
-    flex: 2 1 0; /* Flex-basis: 2 parts */
-}
-
-.navbar-text h3 {
-    font-size: medium;
-}
-
-.navbar-text h4 {
-    font-size: small;
-}
-
-/* NAVBAR RIGHT PROPERTIES */
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    flex: 0 0 auto;
-    padding: 0 1%;
-}
-
-.navbar-right ul {
-    font-weight: bolder;
-    display: flex; /* Align items horizontally */
-    flex-direction: column;;
-    gap: 0rem; /* Optional: Add space between links */
-    text-align: right;
-    font-size: small;
-    white-space: nowrap;
-    list-style: none; /* Remove default list styling */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-}
-
-.navbar-right ul li {
-    display: inline-block;
-    line-height: 1.8vh; /* 25% of 10vh */
-    padding: 0 1rem;
-    border-radius: 5px;
-}
-
-.navbar-right a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-}
-
-.navbar-right ul li:nth-child(odd) {
-    background-color: rgb(254, 250, 224);
-}
-
-.navbar-right ul li:nth-child(even) {
-    background-color: rgb(171, 151, 98);
-}
-
-/* SMALL DEVICE MEDIA QUERIES */
-
-@media screen and (min-aspect-ratio: 2/1) and (max-width: 1024px) {
-    header {
-        flex: 0 0 10vw; /* Change flex-basis to 20vw */
-    }
-
-    .navbar-right ul li {
-        line-height: 4.5vh; /* 25% of 10vh */
-    }
-
-    nav {
-        padding: 2vh;
+@media screen and (orientation: portrait) {
+    :root {
+        --whole-website-width: 100vw;
     }
 }
 
-/* MAIN CONTENT AREA ORGANIZATION */
+/* PHONES IN LANDSCAPE MODE */
+@media screen and (max-width: 1400px) and (orientation: landscape){
+    :root {
 
-    .main-content-container {
-        padding: 2vw;
-        flex: 1 1 auto; /* Allow the main content to grow */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #f0f0f0;
-    }
+        --header-height: 15vh;
+        
+        --whole-website-width: 100vw;
+        
+        .row-container {
+            min-height: 90vh;
+        }
 
-    .main-content-container div:nth-child(odd) {
-        background-color: yellow;
-    }
+        .flex-card {
+            min-height: 40%;
+            max-height: auto;
+            max-width: 50%;
+        }
 
-    @media screen and (orientation: portrait), screen and (min-width: 1025px) {
-        .main-content-container {
-            padding: 2vh;
+        .flex-card p {
+            font-size: calc(1vw + 1vh);
+        }
+
+        .flex-card h2 {
+            font-size: calc(2vw + 2vh);
         }
     }
+} 
+
+/* IPHONE SE LANDSCAPE MODE */
+@media screen and (max-width: 700px) and (orientation: landscape) {
+    .flex-card {
+        min-width: 200px !important;
+    }
+}
+
+
+
+html {
+    display: flex;
+    justify-content: center;
+}
+
+/* style.css */
+body{
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    width: var(--whole-website-width);
+    justify-content: space-between;
+    /* display: flex; */
+    background-color: tomato;
+}
+
+    header {
+            margin-top: 0px;
+            z-index: 20;
+            position: fixed;
+            width: var(--whole-website-width);
+            background-color: var(--header-color);
+            height: var(--header-height); /* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+            nav {
+                background-color: var(--navbar-color);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 90%; /* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
+                width: 98%;
+            }
+
+                /* NAVIGATION BAR LEFT CONTAINER PROPERTIES */
+            
+                .navbar-left {
+                    display: flex;
+                    align-items: center;
+                    height: 100%; /* Ensure the height is the same as the nav */
+                    width: calc(var(--navbar-image-size) * 1.25); /* Initial width, will be adjusted by JS */
+                    flex: 0 0 auto; /* Prevent flex-grow and flex-shrink */
+                    position: relative; /* Make it easier to position the image */
+                    overflow: hidden; /* Hide the overflow for zoom effect */
+                }
+
+                        .navbar-image {
+                            height: var(--navbar-image-size); /* Use the custom property */
+                            width: var(--navbar-image-size); /* Use the custom property */
+                            border-radius: 50%; /* Make the image round */
+                            object-fit: cover; /* Cover the container */
+                        }
+
+                /* NAVBAR TEXT BOX PROPERTIES */
+
+                .navbar-text {
+                    line-height: 120%;
+                    display: inline-block;
+                    justify-content: center;
+                    flex: 2 1 0; /* Flex-basis: 2 parts */
+                }
+
+                .navbar-text h3 {
+                    font-size: medium;
+                }
+
+                .navbar-text h4 {
+                    font-size: small;
+                }
+
+                /* NAVBAR RIGHT PROPERTIES */
+
+                .navbar-right ul {
+                    font-weight: bolder;
+                    display: flex; /* Align items horizontally */
+                    flex-direction: column;;
+                    gap: 0rem; /* Optional: Add space between links */
+                    text-align: right;
+                    font-size: small;
+                    white-space: nowrap;
+                    list-style: none; /* Remove default list styling */
+                    margin: 0; /* Remove default margin */
+                    padding: 0; /* Remove default padding */
+                }
+
+
+                .navbar-right ul li {
+                    line-height: 2.8vh; /* 25% of 10vh */
+                    padding: 0 1rem;
+                    border-radius: 5px;
+                }
+
+                                 
+               
+                .navbar-right a {
+                    color: rgb(0, 0, 0);
+                    text-decoration: none;
+                }
+
+                .navbar-right ul li:nth-child(odd) {
+                    background-color: rgb(254, 250, 224);
+                }
+
+                .navbar-right ul li:nth-child(even) {
+                    background-color: rgb(171, 151, 98);
+                }
+
+main {
+   height:100vh;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+}
+
+main > section:nth-child(odd) {
+    background-color: grey;
+}
+main > section:nth-child(even) {
+    background-color: blueviolet;
+}
+
+
+/* COMMON PROPERTIES */
+
+.row-container {
+    padding-top: var(--header-height);
+    z-index: 1;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clear: both;
+    min-height: 50vh;
+}
+
+
+    .flex-card-container {
+        z-index: 2;
+        width: 99%;
+        height: 99%;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: rgb(0, 0, 0);
+        justify-content: space-evenly;    
+        flex-wrap: wrap;
+        align-content: center;
+        /* min-height: 100%; */
+    }
+
+        .flex-card {
+            /* border: 5px solid black; */
+            flex: 1;
+            /* min-height: 33vh; */
+            min-width: 330px;
+            margin: 5px;
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--flex-card-background-color);
+            height: 90%;
+            /* min-height: 30vh;
+            max-height: 50vh; */
+        }
+
+            .flex-card img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+                object-position: center top;
+            }
+
+            .flex-card h2 {
+                font-size: calc(1.50vw + 1.5vh);
+                text-align: center;
+                color: white;
+            }
+
+            .flex-card p {
+                font-size: calc(.5vw + 1vh);
+                text-align: center;
+                color: white;
+                /* margin-right: 10%; */
+            }
+
+           .evenspaced-content-column {
+                align-items: center;
+                justify-content: space-evenly;
+                display: flex;
+                flex-direction: column;
+           }
+
+                    #introphoto {
+                        flex: 1.5 1 0;
+                    }
+
+                    #introtext {
+                        flex: 1 1.5 0;
+                    }
+
+                    #work .flex-card-container .flex-card {
+                            min-height: 1vh;
+                            max-height: 15vh;
+                            min-width: 32vw;
+                        }
+
+                    #work .row-container {
+                        display: flex;
+                        flex-direction: column;
+                        flex-grow: 1; /* Ensure the container grows to accommodate its content */
+                    }
+
+                    #work .flex-card-container {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        flex-grow: 1; /* Ensure the container grows to accommodate its content */
+                    }
+
+
+/* PHONES IN PORTRAIT MODE */
+@media screen and (orientation: portrait) {
+    .flex-card {
+        min-height: 40%;
+        max-height: 45%;
+    }
+
+    .row-container {
+        min-height: 90vh;
+    }
+
+}
+
+
+
+
+
+
+
 
