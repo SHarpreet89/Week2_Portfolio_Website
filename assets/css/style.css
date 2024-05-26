@@ -70,20 +70,7 @@
 
 
 
-@media only screen and (max-width: 1080px) and (orientation: portrait) {
-    :root {
-        --website-width: 100vw;
-        --heading-line-height: 1;
 
-        --h1-font-size: max(calc(var(--website-height)*.032), 16px);
-        --h2-font-size: max(calc(var(--website-height)*.025), 14px);
-        --h3-font-size: max(calc(var(--website-height)*.018), 12px);
-        --h4-font-size: max(calc(var(--website-height)*.012), 10px);
-        --p-font-size: max(calc(var(--website-height)*.010), 8px);
-        --a-font-size: max(calc(var(--website-height)*.016), 12px);
-        --li-font-size: max(calc(var(--website-height)*.004), 4px);
-    }
-}
 
     /* main > section:nth-child(even) {
         background-color: blueviolet;
@@ -161,6 +148,7 @@ header {
     width: var(--website-width);
     background-color: var(--header-footer-color);
     height: var(--header-height);   
+    border-bottom: 3px solid rgb(39, 39, 39);
 }
 
 nav {
@@ -227,14 +215,14 @@ main > section {
 }
 
 #aboutme {
-    min-height: 80vh;
+    /* min-height: 80vh; */
 }
 
 .container-of-cards {
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
     width: var(--website-width);
@@ -254,7 +242,24 @@ main > section {
     background-color: var(--card-background-color);
     flex: 1;
     min-width: 30%;
-    padding: 0 .2vw 0 .2vw;
+   
+}
+
+#work .card:first-child {
+    min-width: 75%;
+    max-width: 80%;
+}
+
+#work .card {
+    max-width: 30%;
+}
+
+#resume .card {
+    min-width: auto;
+}
+
+#resume .card > img {
+    max-height: 200px;
 }
 
 .card > img {
@@ -266,7 +271,7 @@ main > section {
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     width: 100%;
     padding: 20px;
@@ -288,6 +293,8 @@ main > section {
 }
 
 footer {
+    padding-top: var(--header-height);
+    padding-bottom: 2vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -299,12 +306,43 @@ footer {
         align-items: end;
         justify-items: end;
     }
+
+    .card {
+        min-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 1080px) and (orientation: portrait) {
+    :root {
+        --website-width: 97vw;
+        --heading-line-height: 1;
+
+        --h1-font-size: max(calc(var(--website-height)*.032), 16px);
+        --h2-font-size: max(calc(var(--website-height)*.025), 14px);
+        --h3-font-size: max(calc(var(--website-height)*.018), 12px);
+        --h4-font-size: max(calc(var(--website-height)*.012), 10px);
+        --p-font-size: max(calc(var(--website-height)*.015), 12px);
+        --a-font-size: max(calc(var(--website-height)*.014), 12px);
+        --li-font-size: max(calc(var(--website-height)*.004), 4px);
+    }
+
+    #intro-text .card-content {
+        align-items: center;
+    }
+
+    #intro-text .card-content > p {
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 1400px) and (orientation: landscape) {
     :root {
-        --website-width: 100vw;
+        --website-width: 97vw;
         --heading-line-height: 1;
+    }
+
+    #intro-text .card-content > p {
+        text-align: center;
     }
 }
 
@@ -313,6 +351,14 @@ footer {
         --website-width: 97vw;
         --heading-line-height: 1;
         --header-height: 14vh;
+    }
+
+    #intro-text .card-content {
+        align-items: center;
+    }
+
+    #intro-text .card-content > p {
+        text-align: center;
     }
 }
 
