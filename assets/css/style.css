@@ -1,294 +1,329 @@
 :root {
+
+    line-height: 1.5;
+    --heading-line-height: 1;
+
     --header-height: 10vh;
-    --navbar-image-size: calc(var(--header-height) * 0.9);
-    --header-color: rgb(212, 163, 115);
-    --header-color-backup: rgb(250, 237, 205);
-    --navbar-color: rgb(212, 163, 115);
-    --flex-card-background-color: rgb(85, 166, 90);
-    --whole-website-width: 80vw;
+    --navbar-image-size: calc(var(--header-height) * 0.7);
+    --header-footer-color: rgb(0, 0, 0);
+    --navbar-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
+    --card-background-color: rgb(0, 0, 0);
+    --website-width: 80vw;
+    --website-height: 100vh;
+
+
+    --h1-font-size: max(calc(var(--website-width)*.04), 16px);
+    --h2-font-size: max(calc(var(--website-width)*.03), 14px);
+    --h3-font-size: max(calc(var(--website-width)*.02), 12px);
+    --h4-font-size: max(calc(var(--website-width)*.01), 10px);
+    --p-font-size: max(calc(var(--website-width)*.016), 12px);
+    --a-font-size: max(calc(var(--website-width)*.015), 12px);
+    --li-font-size: max(calc(var(--website-width)*.004), 4px);
+
+
+
+    img {
+        width: 200px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: var(--h1-font-size);
+        line-height: var(--heading-line-height);
+        color: white;
+    }
+
+    h2 {
+        font-size: var(--h2-font-size);
+        line-height: var(--heading-line-height);
+        color: white;
+    }
+
+    h3 {
+        font-size: var(--h3-font-size);
+        line-height: var(--heading-line-height);
+        color: white;
+    }
+
+    h4 {
+        font-size: var(--h4-font-size);
+        line-height: var(--heading-line-height);
+        color: white;
+    }
+
+    p {
+        font-size: var(--p-font-size);
+        color: white;
+    }
+
+    a {
+        font-size: var(--a-font-size);
+        color: white;
+    }
+
+    li {
+        font-size: var(--li-font-size);
+        color: white;
+    }
 }
 
-@media screen and (orientation: portrait) {
+
+
+@media only screen and (max-width: 1080px) and (orientation: portrait) {
     :root {
-        --whole-website-width: 100vw;
+        --website-width: 100vw;
+        --heading-line-height: 1;
+
+        --h1-font-size: max(calc(var(--website-height)*.032), 16px);
+        --h2-font-size: max(calc(var(--website-height)*.025), 14px);
+        --h3-font-size: max(calc(var(--website-height)*.018), 12px);
+        --h4-font-size: max(calc(var(--website-height)*.012), 10px);
+        --p-font-size: max(calc(var(--website-height)*.010), 8px);
+        --a-font-size: max(calc(var(--website-height)*.016), 12px);
+        --li-font-size: max(calc(var(--website-height)*.004), 4px);
     }
 }
 
-/* PHONES IN LANDSCAPE MODE */
-@media screen and (max-width: 1400px) and (orientation: landscape){
-    :root {
+    /* main > section:nth-child(even) {
+        background-color: blueviolet;
+    } 
 
-        --header-height: 15vh;
-        
-        --whole-website-width: 100vw;
-        
-        .row-container {
-            min-height: 90vh;
-        }
-        .flex-card {
-            min-height: 40%;
-            max-height: auto;
-            max-width: 50%;
-        }
+    main > section:nth-child(odd) {
+        background-color: rgb(88, 215, 211);
+    }  */
 
-        .flex-card p {
-            font-size: calc(1vw + 1vh);
-        }
-
-        .flex-card h2 {
-            font-size: calc(2vw + 2vh);
-        }
+    .h1-font-size {
+        font-size: var(--h1-font-size);
+        list-style: none;
+        text-decoration: none;
     }
-} 
 
-/* IPHONE SE LANDSCAPE MODE */
-@media screen and (max-width: 700px) and (orientation: landscape) {
-    .flex-card {
-        min-width: 200px !important;
+    .h2-font-size {
+        font-size: var(--h2-font-size);
+        list-style: none;
+        text-decoration: none;
+
     }
+    .h3-font-size {
+        font-size: var(--h3-font-size);
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .h4-font-size {
+        font-size: var(--h4-font-size);
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .p-font-size {
+        font-size: var(--p-font-size);
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .link-font-size {
+        font-size: var(--li-font-size);
+        list-style: none;
+        text-decoration: none;
+    }
+
+
+
+.text-white {
+    color: var(--text-color);
 }
 
+.navbar-image {
+    width: var(--navbar-image-size) !important;
+    height: auto;
+    border-radius: 50%; /* Make the image round */
+    object-fit: cover; /* Cover the container */
+}
 
-
-html {
+body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    z-index: 0;
+    background-color: black;
+}
+
+header {
     justify-content: center;
-}
-
-/* style.css */
-body{
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    width: var(--whole-website-width);
-    justify-content: space-between;
-    /* display: flex; */
-    background-color: tomato;
-}
-
-    header {
-            margin-top: 0px;
-            z-index: 20;
-            position: fixed;
-            width: var(--whole-website-width);
-            background-color: var(--header-color);
-            height: var(--header-height); /* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-
-            nav {
-                background-color: var(--navbar-color);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 90%; /* Set flex-grow and flex-shrink to 0 and flex-basis to 10vh */
-                width: 98%;
-            }
-
-                /* NAVIGATION BAR LEFT CONTAINER PROPERTIES */
-            
-                .navbar-left {
-                    display: flex;
-                    align-items: center;
-                    height: 100%; /* Ensure the height is the same as the nav */
-                    width: calc(var(--navbar-image-size) * 1.25); /* Initial width, will be adjusted by JS */
-                    flex: 0 0 auto; /* Prevent flex-grow and flex-shrink */
-                    position: relative; /* Make it easier to position the image */
-                    overflow: hidden; /* Hide the overflow for zoom effect */
-                }
-
-                        .navbar-image {
-                            height: var(--navbar-image-size); /* Use the custom property */
-                            width: var(--navbar-image-size); /* Use the custom property */
-                            border-radius: 50%; /* Make the image round */
-                            object-fit: cover; /* Cover the container */
-                        }
-
-                /* NAVBAR TEXT BOX PROPERTIES */
-
-                .navbar-text {
-                    line-height: 120%;
-                    display: inline-block;
-                    justify-content: center;
-                    flex: 2 1 0; /* Flex-basis: 2 parts */
-                }
-
-                .navbar-text h3 {
-                    font-size: medium;
-                }
-
-                .navbar-text h4 {
-                    font-size: small;
-                }
-
-                /* NAVBAR RIGHT PROPERTIES */
-
-                .navbar-right ul {
-                    font-weight: bolder;
-                    display: flex; /* Align items horizontally */
-                    flex-direction: column;;
-                    gap: 0rem; /* Optional: Add space between links */
-                    text-align: right;
-                    font-size: small;
-                    white-space: nowrap;
-                    list-style: none; /* Remove default list styling */
-                    margin: 0; /* Remove default margin */
-                    padding: 0; /* Remove default padding */
-                }
-
-
-                .navbar-right ul li {
-                    line-height: 2.8vh; /* 25% of 10vh */
-                    padding: 0 1rem;
-                    border-radius: 5px;
-                }
-
-                                 
-               
-                .navbar-right a {
-                    color: rgb(0, 0, 0);
-                    text-decoration: none;
-                }
-
-                .navbar-right ul li:nth-child(odd) {
-                    background-color: rgb(254, 250, 224);
-                }
-
-                .navbar-right ul li:nth-child(even) {
-                    background-color: rgb(171, 151, 98);
-                }
-
-main {
-   height:100vh;
-   display: flex;
-   flex-direction: column;
-   flex-grow: 1;
-}
-
-main > section:nth-child(odd) {
-    background-color: grey;
-}
-main > section:nth-child(even) {
-    background-color: blueviolet;
-}
-
-
-/* COMMON PROPERTIES */
-
-.row-container {
-    padding-top: var(--header-height);
+    align-items: center;
+    display: flex;
+    margin-top: 0px;
     z-index: 1;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
+    position: fixed;
+    width: var(--website-width);
+    background-color: var(--header-footer-color);
+    height: var(--header-height);   
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--website-width);
+    height: 70%;
+    padding: 0 1vw 0 0;
+}
+
+.navbar-left {
     display: flex;
     align-items: center;
+    height: 100%;
+    width: calc(var(--navbar-image-size) * 1.25);
+    position: relative;
+    min-width: var(--header-height);
+    max-width: var(--header-height);
     justify-content: center;
-    clear: both;
-    min-height: 50vh;
+    flex: 1 1 var(--header-height);
 }
 
+.navbar-middle {
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    width: 100%;
+    justify-content:end;
+    flex: 1 1 calc(var(--website-width)*.02);
+}
 
-    .flex-card-container {
-        z-index: 2;
-        width: 99%;
-        height: 99%;
+.navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    /* height: 100%; */
+    width: calc(var(--navbar-image-size) * 1.25);
+    flex-wrap: wrap;
+    flex: 1 1 calc(var(--website-width)*.01);
+    background-color: rgb(0, 0, 0);
+}   
+
+    .navbar-right > ul {
+        /* border: 1px dashed rgb(218, 30, 30); */
         display: flex;
-        align-items: center;
-        flex-direction: row;
-        background-color: rgb(0, 0, 0);
-        justify-content: space-evenly;    
         flex-wrap: wrap;
-        align-content: center;
-        /* min-height: 100%; */
+        flex-direction: row;
+        /* background-color: aquamarine; */
+        justify-content: space-between;
+        flex: 1;        
     }
 
-        .flex-card {
-            /* border: 5px solid black; */
-            flex: 1;
-            /* min-height: 33vh; */
-            min-width: 330px;
-            margin: 5px;
-            display: flex;
-            justify-content: space-around;
-            background-color: var(--flex-card-background-color);
-            height: 90%;
-            /* min-height: 30vh;
-            max-height: 50vh; */
-        }
+   
+main > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--website-width);
+    padding-top:var(--header-height); ;
+}
 
-            .flex-card img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: cover;
-                object-position: center top;
-            }
+#aboutme {
+    min-height: 80vh;
+}
 
-            .flex-card h2 {
-                font-size: calc(1.50vw + 1.5vh);
-                text-align: center;
-                color: white;
-            }
+.container-of-cards {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: var(--website-width);
+    /* max-height: 90%; */
+    padding: 2vw;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    flex: 1;
+}
 
-            .flex-card p {
-                font-size: calc(.5vw + 1vh);
-                text-align: center;
-                color: white;
-                /* margin-right: 10%; */
-            }
+.card {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    background-color: var(--card-background-color);
+    flex: 1;
+    min-width: 30%;
+    padding: 0 .2vw 0 .2vw;
+}
 
-           .evenspaced-content-column {
-                align-items: center;
-                justify-content: space-evenly;
-                display: flex;
-                flex-direction: column;
-           }
+.card > img {
+    width: 100%;
+    height: auto;
+}
 
-                    #introphoto {
-                        flex: 1.5 1 0;
-                    }
+.card-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--card-background-color);
+    flex: 1;
+}
 
-                    #introtext {
-                        flex: 1 1.5 0;
-                    }
-
-                    #work .flex-card-container .flex-card {
-                            min-height: 1vh;
-                            max-height: 15vh;
-                            min-width: 32vw;
-                        }
-
-                    #work .row-container {
-                        display: flex;
-                        flex-direction: column;
-                        flex-grow: 1; /* Ensure the container grows to accommodate its content */
-                    }
-
-                    #work .flex-card-container {
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        flex-grow: 1; /* Ensure the container grows to accommodate its content */
-                    }
-
-
-/* PHONES IN PORTRAIT MODE */
-@media screen and (orientation: portrait) {
-    .flex-card {
-        min-height: 40%;
-        max-height: 45%;
+    .card-content > img {
+        width: 100%;
+        height: auto;
     }
 
-    .row-container {
+#intro-image {
+    border-radius: 10%;
+}
+
+#intro-text .card-content {
+    align-items: start;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+    .navbar-right > ul > li {
+        min-width: 49%;
+        align-items: end;
+        justify-items: end;
+    }
+}
+
+@media only screen and (max-width: 1400px) and (orientation: landscape) {
+    :root {
+        --website-width: 100vw;
+        --heading-line-height: 1;
+    }
+}
+
+@media only screen and (max-width: 1400px) and (orientation: landscape) and (min-aspect-ratio: 2/1) {
+    :root {
+        --website-width: 97vw;
+        --heading-line-height: 1;
+        --header-height: 14vh;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+
+    #aboutme {
         min-height: 90vh;
     }
-
+    
+    #intro-image {
+        max-width: 33vw;
+    }
 }
-
-
-
-
-
-
-
 
