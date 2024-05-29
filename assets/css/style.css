@@ -1,3 +1,5 @@
+/* APPLYING ROOT VARIABLES TO CSS */
+
 :root {
     --a-font-size: max(calc(var(--website-width) * .015), 12px);
     --card-background-color: rgb(0, 0, 0);
@@ -16,7 +18,15 @@
     --website-height: 100vh;
     --website-width: 80vw;
     line-height: 1.5;
+
+    img {
+        height: auto;
+        width: 200px;
+    }
 }
+
+/* PHONE PORTRAIT MODE MEDIA QUEERY
+BEST LEFT ON THE TOP OF THE REST OF FILE FOR CONSISTENT APPLICATION OF THIS CSS TO THE CODE */
 
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
     :root {
@@ -32,28 +42,7 @@
     }
 }
 
-  
-a {
-    color: white;
-    font-size: var(--a-font-size);
-}
-
-body {
-    align-items: center;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    z-index: 0;
-}
-
-footer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 2vw;
-    padding-top: var(--header-height);
-}
+/* STYLE THE VARIOUS HEADINGS AND APPLY VARIABLE FONT SIZE PARAMETERS TO THESE */
 
 h1 {
     color: white;
@@ -79,6 +68,36 @@ h4 {
     line-height: var(--heading-line-height);
 }
 
+li {
+    color: white;
+    font-size: var(--li-font-size);
+}
+
+p {
+    color: white;
+    font-size: var(--p-font-size);
+}
+
+
+a {
+    color: white;
+    font-size: var(--a-font-size);
+    text-decoration: none;
+}
+
+/* SET THE BODY TO FLEX TO ALIGN ALL CONTENT TO CENTRE */
+
+body {
+    align-items: center;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    z-index: 0;
+}
+
+/* STYLE THE HEADER */
+
 header {
     align-items: center;
     background-color: var(--header-footer-color);
@@ -92,15 +111,7 @@ header {
     z-index: 1;
 }
 
-img {
-    height: auto;
-    width: 200px;
-}
-
-li {
-    color: white;
-    font-size: var(--li-font-size);
-}
+/* STYLE THE NAVIGATION BAR */
 
 nav {
     align-items: center;
@@ -111,95 +122,6 @@ nav {
     padding: 0 1vw 0 0;
     width: var(--website-width);
 }
-
-p {
-    color: white;
-    font-size: var(--p-font-size);
-}
-
-main > section {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: var(--header-height);
-    width: var(--website-width);
-}
-
-.card {
-    align-items: stretch;
-    background-color: var(--card-background-color);
-    border: 1px solid black;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-evenly;
-    min-width: 30%;
-}
-
-.card-content {
-    align-items: center;
-    background-color: var(--card-background-color);
-    color: white;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 20px;
-    width: 100%;
-}
-
-.card-content > img {
-    height: auto;
-    width: 100%;
-}
-
-.card > img {
-    height: auto;
-    width: 100%;
-}
-
-.container-of-cards {
-    align-items: stretch;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    overflow: hidden;
-    padding: 2vw;
-    width: var(--website-width);
-}
-
-.h1-font-size {
-    font-size: var(--h1-font-size);
-    list-style: none;
-    text-decoration: none;
-}
-
-.h2-font-size {
-    font-size: var(--h2-font-size);
-    list-style: none;
-    text-decoration: none;
-}
-
-.h3-font-size {
-    font-size: var(--h3-font-size);
-    list-style: none;
-    text-decoration: none;
-}
-
-.h4-font-size {
-    font-size: var(--h4-font-size);
-    list-style: none;
-    text-decoration: none;
-}
-
-/* .link-font-size {
-    font-size: var(--li-font-size);
-    list-style: none;
-    text-decoration: none;
-} */
 
 .navbar-image {
     border-radius: 50%;
@@ -239,6 +161,11 @@ main > section {
     width: calc(var(--navbar-image-size) * 1.25);
 }
 
+.navbar-right > ul > li:hover {
+    transform: translateX(-5px);
+    transform: translateY(-5px);
+}
+
 .navbar-right > ul {
     display: flex;
     flex-direction: row;
@@ -247,19 +174,80 @@ main > section {
     justify-content: space-between;
 }
 
-.p-font-size {
-    font-size: var(--p-font-size);
-    list-style: none;
-    text-decoration: none;
+/* STYLE THE FOOTER */
+
+footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2vw;
+    padding-top: var(--header-height);
 }
 
+/* STYLE THE MAIN SECTION */
+
+main > section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--header-height);
+    width: var(--website-width);
+}
+
+/* STYlE THE CARD CONTAINERS, CARD AND CARD CONTENT */
+
+.container-of-cards {
+    align-items: stretch;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+    padding: 2vw;
+    width: var(--website-width);
+}
+
+.card {
+    align-items: stretch;
+    background-color: var(--card-background-color);
+    border: 1px solid black;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-width: 30%;
+}
+
+.card-content {
+    align-items: center;
+    background-color: var(--card-background-color);
+    color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.card-content > img {
+    height: auto;
+    width: 100%;
+}
+
+.card > img {
+    height: auto;
+    width: 100%;
+}
+
+/* SET THE STYLES FOR THE TEXT-WHITE CLASS */
 .text-white {
     color: var(--text-color);
 }
 
-#aboutme {
-    /* min-height: 80vh; */
-}
+/* VARIOUS INTRO ID STYLES */
 
 #intro-image {
     border-radius: 10%;
@@ -269,13 +257,34 @@ main > section {
     align-items: start;
 }
 
+/* VARIOUS RESUME SECTION STYLES */
+
+#resume .container-of-cards {
+    flex-wrap: nowrap;
+}
+
 #resume .card {
-    min-width: auto;
+    min-width: auto; /* IF IT DOESNT WORK - REMOVE THE HOVER EFFECTS AND SET THIS TO AUTO */
+}
+
+#resume .card:hover {
+    min-width: 800px;
 }
 
 #resume .card > img {
     max-height: 200px;
 }
+
+#resume .card > img:hover {
+    min-width: 800px;
+    min-height: 500px;
+}
+
+#resume .card-content h3 , p {
+    font-size: auto;
+}
+
+/* VARIOUS WORK SECTION ID SYLES */
 
 #work .card {
     max-width: 33%;
@@ -304,32 +313,12 @@ main > section {
 }
 
 
-/* Contact Form Styles */
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+/* STYLE THE CONTACT FORM */
 
 .form-group {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-#contact-form label {
-    flex: 1;
-    margin-right: 20px;
-    text-align: left;
-    font-size: var(--h3-font-size);
-}
-
-#contact-form input,
-#contact-form textarea {
-    flex: 1 1 50%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .submit-button {
@@ -342,11 +331,13 @@ main > section {
     border-radius: 5px;
     cursor: pointer;
     align-items: ce;
-    align-self: center; /* Align the button to the start of the form */
+    align-self: center;
     width: 100%;
     font-size: var(--h2-font-size);
     animation: colorChange 3s infinite;
 }
+
+/* ANIMATE THE SUBMIT BUTTON */
 
 @keyframes colorChange {
     0% {
@@ -360,9 +351,59 @@ main > section {
     }
 }
 
+
 .submit-button:hover {
     background-color: #faf7d8;
 }
+
+/* STYLE THE CONTACT CARD FORM AND LABELS */
+
+#contact .card {
+    border: 1px solid white;
+    padding: 20px;
+    min-width: 70%;
+    max-width: 90%;
+}
+
+
+#contact-form label {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+    font-size: var(--h3-font-size);
+}
+
+#contact-form input, #contact-form textarea {
+    flex: 1 1 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact .container-of-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#contact .card:hover {
+    border: 1px solid white;
+    padding: 20px;
+    min-width: 70%;
+    max-width: 90%;
+}
+
+
+/* STYLE THE CONTACT ICONS  */
 
 .contact-icons {
     display: flex;
@@ -388,28 +429,12 @@ main > section {
 }
 
 .contact-icons a img {
-    
     height: auto;
     width: 5vw;
     border-radius: 50%;
-
 }
 
-/* Ensure the card layout for contact section matches other sections */
-#contact .container-of-cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-#contact .card {
-    border: 1px solid white;
-    padding: 20px;
-    min-width: 70%;
-    max-width: 90%;
-}
+/* MEDIA QUEERIES FOR VERY SMALL SCREEN PHONES AND TABLETS IN PORTRAIT MODE */
 
 
 @media only screen and (max-width: 600px) and (orientation: portrait) {
@@ -432,6 +457,7 @@ main > section {
     }
 }
 
+/* MEDIA QUEERIES FOR PHONES AND TABLETS IN LANDSCAPE MODE */
 
 @media only screen and (max-width: 1400px) and (orientation: landscape) {
     :root {
@@ -446,15 +472,19 @@ main > section {
     #intro-image {
         max-height: 70vh;
         width: auto;
-     }
+    }
 
 }
+
+/* MEDIA QUEERY FOR PHONE AND TABLETS IN LANDSCAPE MODE AND MINIMUM ASPECT RATIO OF 2:1 */
 
 @media only screen and (max-width: 1400px) and (orientation: landscape) and (min-aspect-ratio: 2/1) {
     :root {
         --header-height: 14vh;
     }
 }
+
+/* MEDIA QUEERY FOR PHONES AND SMALL DEVICES IN PORTRAIT MODE  */
 
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
     :root {
@@ -469,15 +499,9 @@ main > section {
         --website-width: 97vw;
     }
 
-    #intro-text .card-content {
-        align-items: center;
+    main > section {
+        padding-top: 0 !important;
     }
-
-    #intro-text .card-content > p {
-        text-align: center;
-    }
-
- 
 
     header {
         position: fixed;
@@ -489,9 +513,24 @@ main > section {
     footer {
         padding-bottom: calc(var(--header-height)*1.5);
     }
-    
+
+    .container-of-cards {
+        padding: 0 !important;
+    }
+
+    #intro-text .card-content {
+        align-items: center;
+    }
+
+    #intro-text .card-content > p {
+        text-align: center;
+    }
+
+    #resume .container-of-cards {
+        flex-wrap: wrap;
+    }
+
     #contact {
-    
         padding-top: calc(var(--header-height)*1);
         padding-bottom: calc(var(--header-height)*1);
     }
@@ -499,12 +538,7 @@ main > section {
     #intro-text .card-content {
         align-items: center !important;
     }
-
-    main > section {
-        padding-top: 0 !important;
-    }
-
-    .container-of-cards {
-        padding: 0 !important;
-    }
+    
 }
+
+/* END OF MEDIA QUEERY */
