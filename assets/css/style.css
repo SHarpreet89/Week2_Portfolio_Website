@@ -16,7 +16,7 @@
     --p-font-size: max(calc(var(--website-width) * .016), 12px);
     --text-color: rgb(255, 255, 255);
     --website-height: 100vh;
-    --website-width: 80vw;
+    --website-width: 90vw;
     line-height: 1.5;
 
     img {
@@ -195,6 +195,10 @@ main > section {
     width: var(--website-width);
 }
 
+main > section > h2 {
+    border-top: 3vh solid rgb(0, 0, 0);
+}
+
 /* STYlE THE CARD CONTAINERS, CARD AND CARD CONTENT */
 
 .container-of-cards {
@@ -288,7 +292,7 @@ main > section {
 /* VARIOUS RESUME SECTION STYLES */
 
 #resume .container-of-cards {
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -319,7 +323,7 @@ main > section {
 
 
 #resume .container-of-cards > .card > img :last-child:hover  {
-   right: 0;
+    right: 0;
 }
 
 /* STYLE THE CONTACT FORM */
@@ -369,7 +373,7 @@ main > section {
 
 #contact .card {
     border: 1px solid white;
-    padding: 20px;
+    padding: 60px;
     min-width: 70%;
     max-width: 90%;
 }
@@ -402,15 +406,8 @@ main > section {
     align-items: center;
     flex-direction: column;
     text-align: center;
+    min-height: 50vh;
 }
-
-#contact .card:hover {
-    border: 1px solid white;
-    padding: 20px;
-    min-width: 70%;
-    max-width: 90%;
-}
-
 
 /* STYLE THE CONTACT ICONS  */
 
@@ -419,11 +416,15 @@ main > section {
     justify-content: stretch;
     width: 100%;
     align-content: center;
+    overflow: hidden;
+    padding-top: 2vh;
+    align-items: center;
+
 }
 
 .contact-icons a {
     display: flex;
-    padding: 0 10vw 0 10vw;
+    padding: 0 1vw 0 1vw;
     color: white;
     font-size: 24px;
     text-decoration: none;
@@ -438,8 +439,8 @@ main > section {
 }
 
 .contact-icons a img {
-    height: auto;
-    width: 5vw;
+    height: 100%;
+    width: auto;
     border-radius: 50%;
 }
 
@@ -454,7 +455,21 @@ main > section {
     .navbar-right > ul > li {
         align-items: end;
         justify-items: end;
-        min-width: 49%;
+        /* min-width: 49%; */
+    }
+
+    .navbar-middle {
+        flex: .75 1 calc(var(--website-width) * .02);
+        padding-right: 2vw;
+    }
+
+    .navbar-right {
+        line-height: 2.5;
+        padding-right: 2vw;
+    }
+
+    .navbar-right > ul > li:nth-child(odd) {
+        align-items: right;
     }
 
     .contact-icons a img {
@@ -462,7 +477,10 @@ main > section {
         height: auto;
         width: 10vw;
         border-radius: 50%;
-    
+    }
+
+    #contact .card {
+        min-width: 90vw;
     }
 }
 
@@ -482,7 +500,6 @@ main > section {
         max-height: 70vh;
         width: auto;
     }
-
 }
 
 /* MEDIA QUEERY FOR PHONE AND TABLETS IN LANDSCAPE MODE AND MINIMUM ASPECT RATIO OF 2:1 */
@@ -491,13 +508,36 @@ main > section {
     :root {
         --header-height: 14vh;
     }
+
+    #contact .card {
+        min-width: 90vw;
+        padding: 1vw;
+    }
+
+    .contact-icons {
+        height: 5vw;
+        padding: 0;
+    }
+
+    .submit-button {
+        padding: 1vw;
+        margin: 10px;
+    }
+
+    #contact > .container-of-cards > button {
+        max-height: 2vh;
+    }
+
+    #message {
+        max-height: 15vh;
+    }
 }
 
 /* MEDIA QUEERY FOR PHONES AND SMALL DEVICES IN PORTRAIT MODE  */
 
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
     :root {
-        --a-font-size: max(calc(var(--website-height) * .014), 12px);
+        --a-font-size: max(calc(var(--website-height) * .016), 12px);
         --h1-font-size: max(calc(var(--website-height) * .032), 16px);
         --h2-font-size: max(calc(var(--website-height) * .025), 14px);
         --h3-font-size: max(calc(var(--website-height) * .018), 12px);
@@ -525,6 +565,14 @@ main > section {
 
     .container-of-cards {
         padding: 0 !important;
+    }
+
+    .navbar-middle {
+        flex: .7 1 calc(var(--website-width) * .02);
+    }
+
+    #aboutme > .card {
+        min-width: 70vw;
     }
 
     #work h2 {
@@ -569,6 +617,10 @@ main > section {
         border-bottom: 3vh solid rgb(0, 0, 0);
     }
 
+    #contact .card {
+        padding: 5px;
+    }
+
     #intro-text .card-content {
         align-items: center !important;
     }
@@ -584,5 +636,15 @@ main > section {
     }
     
 }
+
+/* MEDIA QUEERY FOR IPAD SIZED DEVICES IN PORTRAIT MODE */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+
+    .card {
+        flex: .5 .5 60%;
+    }
+
+}
+
 
 /* END OF MEDIA QUEERY */
