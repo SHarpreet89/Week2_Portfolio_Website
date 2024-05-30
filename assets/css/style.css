@@ -257,33 +257,6 @@ main > section {
     align-items: start;
 }
 
-/* VARIOUS RESUME SECTION STYLES */
-
-#resume .container-of-cards {
-    flex-wrap: nowrap;
-}
-
-#resume .card {
-    min-width: auto; /* IF IT DOESNT WORK - REMOVE THE HOVER EFFECTS AND SET THIS TO AUTO */
-}
-
-#resume .card:hover {
-    min-width: 800px;
-}
-
-#resume .card > img {
-    max-height: 200px;
-}
-
-#resume .card > img:hover {
-    min-width: 800px;
-    min-height: 500px;
-}
-
-#resume .card-content h3 , p {
-    font-size: auto;
-}
-
 /* VARIOUS WORK SECTION ID SYLES */
 
 #work .card {
@@ -312,6 +285,33 @@ main > section {
     transform: translateY(10px);
 }
 
+/* VARIOUS RESUME SECTION STYLES */
+
+#resume .container-of-cards {
+    flex-wrap: nowrap;
+}
+
+#resume .card {
+    min-width: auto; /* IF IT DOESNT WORK - REMOVE THE HOVER EFFECTS AND SET THIS TO AUTO */
+}
+
+#resume .card > img {
+    max-height: 200px;
+}
+
+#resume .card > img:hover {
+    min-width: 800px;
+    min-height: 500px;
+}
+
+#resume .card-content h3 , p {
+    font-size: auto;
+}
+
+
+#resume .container-of-cards > .card > img :last-child:hover  {
+   right: 0;
+}
 
 /* STYLE THE CONTACT FORM */
 
