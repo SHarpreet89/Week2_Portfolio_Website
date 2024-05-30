@@ -452,10 +452,21 @@ main > section > h2 {
         min-width: 300px;
     }
 
-    .navbar-right > ul > li {
-        align-items: end;
-        justify-items: end;
-        /* min-width: 49%; */
+   
+
+    nav {
+        align-items: baseline;
+    }
+
+    .navbar-middle {
+        position: relative;
+        bottom: 65%;
+        padding-left: .75vw;
+    }
+
+    .navbar-right {
+        position: relative;
+        bottom: 67%;
     }
 
     .navbar-middle {
@@ -465,7 +476,12 @@ main > section > h2 {
 
     .navbar-right {
         line-height: 2.5;
-        padding-right: 2vw;
+        padding-right: 1vw;
+    }
+
+    .navbar-right > ul > li {
+        align-items: end;
+        justify-items: end;
     }
 
     .navbar-right > ul > li:nth-child(odd) {
@@ -563,7 +579,7 @@ main > section > h2 {
         padding-bottom: calc(var(--header-height)*1.5);
     }
 
-    .container-of-cards {
+       .container-of-cards {
         padding: 0 !important;
     }
 
