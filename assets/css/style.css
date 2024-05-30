@@ -281,27 +281,36 @@ main > section {
 
 #work .card > a > img:hover {
     box-shadow: 0px 0px 3px 3px rgb(185, 185, 185);
-    transform: translateX(10px);
-    transform: translateY(10px);
+    transform: translateX(-10px);
+    transform: translateY(-10px);
 }
 
 /* VARIOUS RESUME SECTION STYLES */
 
 #resume .container-of-cards {
-    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #resume .card {
-    min-width: auto; /* IF IT DOESNT WORK - REMOVE THE HOVER EFFECTS AND SET THIS TO AUTO */
+    min-width: 28%; 
+    max-width: 33%;
 }
 
 #resume .card > img {
-    max-height: 200px;
+    max-height: auto;
+}
+
+#resume .card:hover {
+    box-shadow: 0px 0px 3px 3px rgb(185, 185, 185);
+    transform: translateX(-10px);
+    transform: translateY(-10px);
 }
 
 #resume .card > img:hover {
-    min-width: 800px;
-    min-height: 500px;
+    /* box-shadow: 0px 0px 3px 3px rgb(185, 185, 185);
+    transform: translateX(10px);
+    transform: translateY(10px); */
 }
 
 #resume .card-content h3 , p {
@@ -518,12 +527,32 @@ main > section {
         padding: 0 !important;
     }
 
+    #work h2 {
+        border-top: 3vh solid rgb(0, 0, 0);
+        border-bottom: 1vh solid rgb(0, 0, 0);
+    }
+
+    #aboutme {
+        border-top: 3vh solid rgb(0, 0, 0);
+        border-bottom: 10vh solid rgb(0, 0, 0);
+    }
+
     #intro-text .card-content {
         align-items: center;
     }
 
     #intro-text .card-content > p {
         text-align: center;
+    }
+
+    #resume h2 {
+        border-top: 3vh solid rgb(0, 0, 0);
+        border-bottom: 3vh solid rgb(0, 0, 0);
+    }
+
+    #resume .card {
+        max-width: 97%;
+        min-width: 95%;
     }
 
     #resume .container-of-cards {
@@ -535,8 +564,23 @@ main > section {
         padding-bottom: calc(var(--header-height)*1);
     }
 
+    #contact h2 {
+        border-top: 10vh solid rgb(0, 0, 0);
+        border-bottom: 3vh solid rgb(0, 0, 0);
+    }
+
     #intro-text .card-content {
         align-items: center !important;
+    }
+
+    #work .card:first-child {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    #work .card {
+        max-width: 90%;
+        min-width: 90%;
     }
     
 }
