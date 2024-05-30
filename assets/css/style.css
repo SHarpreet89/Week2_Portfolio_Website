@@ -533,7 +533,7 @@ main > section > h2 {
     }
 }
 
-/* MEDIA QUEERY FOR PHONES AND SMALL DEVICES IN PORTRAIT MODE  */
+/* MEDIA QUEERY FOR IPHONES AND SMALL DEVICES IN PORTRAIT MODE  */
 
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
     :root {
@@ -568,11 +568,20 @@ main > section > h2 {
     }
 
     .navbar-middle {
-        flex: .9 1 calc(var(--website-width) * .02);
+        flex: 1 1 calc(var(--website-width) * .02);
     }
 
     #aboutme > .card {
         min-width: 70vw;
+    }
+
+    #intro-photo .card-content {
+        padding: 0;
+    }
+
+    #intro-text .card-content > p {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     #work h2 {
@@ -641,7 +650,7 @@ main > section > h2 {
 @media only screen and (max-width: 768px) and (orientation: portrait) {
 
     .card {
-        flex: .5 .5 60%;
+        flex: .1 .1 100%;
     }
 
 }
