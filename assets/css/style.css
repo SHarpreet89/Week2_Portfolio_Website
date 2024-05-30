@@ -568,7 +568,7 @@ main > section > h2 {
     }
 
     .navbar-middle {
-        flex: .7 1 calc(var(--website-width) * .02);
+        flex: .9 1 calc(var(--website-width) * .02);
     }
 
     #aboutme > .card {
