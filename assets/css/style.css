@@ -1,7 +1,7 @@
 /* APPLYING ROOT VARIABLES TO CSS */
 
 :root {
-    --a-font-size: max(calc(var(--website-width) * .015), 12px);
+    --a-font-size: max(calc(var(--website-width) * .012), 10px);
     --card-background-color: rgb(0, 0, 0);
     --h1-font-size: max(calc(var(--website-width) * .04), 16px);
     --h2-font-size: max(calc(var(--website-width) * .03), 14px);
@@ -145,7 +145,7 @@ nav {
 .navbar-middle {
     display: flex;
     flex-direction: column;
-    flex: 1 1 calc(var(--website-width) * .02);
+    flex: 1 1 calc(var(--website-width) * .035);
     justify-content: end;
     width: 100%;
 }
