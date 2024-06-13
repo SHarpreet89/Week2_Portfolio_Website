@@ -20,7 +20,7 @@ As a BootCamp Student, I wanted to make sure my website was developed using indu
 
 ## Website Link
 
-https://sharpreet89.github.io/horiseon-seo-and-marketing/
+https://sharpreet89.github.io/Week2_Portfolio_Website/
 
 ## Contact me
 
